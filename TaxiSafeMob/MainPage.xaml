@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaxiSafeMob.MainPage"
+             Background="#f5c81b">
+    <ContentPage.Content>
+        <StackLayout >
+            <Frame BackgroundColor="#222222" Padding="24" CornerRadius="0">
+                <Label Text="TaxiSafeMobile" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <Label Text="Авторизация" HorizontalOptions="Center" TextColor="Black" FontSize="28" Margin="40"/>
+            <Entry x:Name="Login" Placeholder="Введите логин" TextColor="Black" PlaceholderColor="black" Margin=" 20"/>
+            <Entry x:Name="Password" Placeholder="Введите пароль" TextColor="Black" PlaceholderColor="Black" Margin="20"/>
+
+            <Button Margin="20" CornerRadius="15" BackgroundColor="#222222"
+                Text="Авторизоваться" TextColor="White"
+                x:Name="Avtor" Clicked="Avtor_Clicked">
+            </Button>
+            <Button Margin="20" CornerRadius="15" BackgroundColor="#222222"
+                Text="Зарегистрироваться" TextColor="White"
+                x:Name="Reg" Clicked="Reg_Clicked"/>
+
+            <Button Margin="20" CornerRadius="15" BackgroundColor="#222222"
+                Text="Выйти из приложения" TextColor="White"
+                x:Name="Exit" Clicked="Exit_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaxiSafeMob.Zakaztaxi" Background="#f5c81b">
+    <ContentPage.Content >
+        <StackLayout>
+            <Frame BackgroundColor="#222222" Padding="24" CornerRadius="0">
+                <Label Text="Заказ такси" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+
+
+            <Entry x:Name="Adres" Placeholder="Укажите куда приехать таксисту" TextColor="Black" PlaceholderColor="black" Margin=" 25"/>
+            <Entry x:Name="Punkt" Placeholder="Введите конечный пункт маршрута" TextColor="Black" PlaceholderColor="black" Margin=" 25"/>
+
+
+
+            <Button Margin="20" CornerRadius="15" BackgroundColor="#222222"
+                Text="Отправить" TextColor="White"
+                x:Name="Otpravka" Clicked="Otpravka_Clicked"/>
+            <Button Margin="20" CornerRadius="15" BackgroundColor="#222222"
+                Text="Вернуться назад" TextColor="White"
+                x:Name="Back" Clicked="Back_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
