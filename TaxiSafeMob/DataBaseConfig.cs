@@ -10,26 +10,26 @@ namespace TaxiSafeMob
     {
 
         public static string Name;
-        
-        //SqlConnection SqlConnection = new SqlConnection(@"Data Source=DESKTOP-HH3U1T3\SQLEXPRESS;Initial Catalog=TaxiSafe;Integrated Security=True");
-        //public void openConnection()
-        //{
-        //    if (SqlConnection.State == System.Data.ConnectionState.Closed)
-        //    {
-        //        SqlConnection.Open();
-        //    }
-        //}
-        //public void closeConnection()
-        //{
-        //    if (SqlConnection.State == System.Data.ConnectionState.Open)
-        //    {
-        //        SqlConnection.Close();
-        //    }
-        //}
-        //public SqlConnection getConnection()
-        //{
-        //    return SqlConnection;
-        //}
+
+        SqlConnection SqlConnection = new SqlConnection(@"Data Source=DESKTOP-HH3U1T3\SQLEXPRESS;Initial Catalog=TaxiSafe;Integrated Security=True");
+        public void openConnection()
+        {
+            if (SqlConnection.State == System.Data.ConnectionState.Closed)
+            {
+                SqlConnection.Open();
+            }
+        }
+        public void closeConnection()
+        {
+            if (SqlConnection.State == System.Data.ConnectionState.Open)
+            {
+                SqlConnection.Close();
+            }
+        }
+        public SqlConnection getConnection()
+        {
+            return SqlConnection;
+        }
 
     }
 }

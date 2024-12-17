@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Data;
+using System.Data.SqlClient;
 using Xamarin.Forms;
 
 namespace TaxiSafeMob
 {
     public partial class MainPage : ContentPage
     {
-        //DataBaseConfig dataBase = new DataBaseConfig();
+        DataBaseConfig dataBase = new DataBaseConfig();
         public MainPage()
         {
             NavigationPage.SetHasNavigationBar(this, false);
@@ -41,47 +43,47 @@ namespace TaxiSafeMob
             string password = Password.Text;
 
             //// Использование параметризированного запроса для предотвращения SQL-инъекций
-            //string query = "SELECT Name FROM Polsovateli WHERE Login = @login AND Password = @password;";
+            string query = "SELECT Name FROM Polsovateli WHERE Login = @login AND Password = @password;";
 
-            //try
-            //{
-            //    using (SqlCommand command = new SqlCommand(query, dataBase.getConnection()))
-            //    {
-            //        command.Parameters.AddWithValue("@login", login);
-            //        command.Parameters.AddWithValue("@password", password);
+            try
+            {
+                using (SqlCommand command = new SqlCommand(query, dataBase.getConnection()))
+                {
+                    command.Parameters.AddWithValue("@login", login);
+                    command.Parameters.AddWithValue("@password", password);
 
-            //        dataBase.openConnection();
+                    dataBase.openConnection();
 
-            //        // Выполнение запроса и получение результата
-            //        using (SqlDataReader reader = command.ExecuteReader())
-            //        {
-            //            if (reader.Read())
-            //            {
-            //                // Получение имени пользователя
-            //                string name = reader["Name"].ToString();
+                    // Выполнение запроса и получение результата
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Получение имени пользователя
+                            string name = reader["Name"].ToString();
 
-            //                DataBaseConfig.Name = name;
-            //                await Navigation.PushAsync(new Polsovatel());
+                            DataBaseConfig.Name = name;
+                            await Navigation.PushAsync(new Polsovatel());
 
 
 
-            //            }
-            //            else
-            //            {
-            //                await DisplayAlert("Ошибка", "Неверный логин или пароль", "OK");
-            //            }
-            //        }
-            //    }
-            //}
+                        }
+                        else
+                        {
+                            await DisplayAlert("Ошибка", "Неверный логин или пароль", "OK");
+                        }
+                    }
+                }
+            }
 
-            //finally
-            //{
-            //    // Закрытие соединения, если оно открыто
-            //    if (dataBase.getConnection().State == ConnectionState.Open)
-            //    {
-            //        dataBase.closeConnection();
-            //    }
-            //}
+            finally
+            {
+                // Закрытие соединения, если оно открыто
+                if (dataBase.getConnection().State == ConnectionState.Open)
+                {
+                    dataBase.closeConnection();
+                }
+            }
             await Navigation.PushAsync(new Polsovatel());
 
 
