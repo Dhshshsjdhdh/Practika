@@ -8,7 +8,9 @@ namespace TaxiSafeMob
 {
     class DataBaseConfig
     {
-
+        //Работа с Nuget пакетами- Sql Client.
+        //Попытка решения проблемы совместимости Sql на платформе Xamarin
+      
         public static string Name;
 
         SqlConnection SqlConnection = new SqlConnection(@"Data Source=DESKTOP-HH3U1T3\SQLEXPRESS;Initial Catalog=TaxiSafe;Integrated Security=True");
