@@ -4,6 +4,7 @@
              x:Class="TaxiSafeMob.MainPage"
              Background="#f5c81b">
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout >
             <Frame BackgroundColor="#222222" Padding="24" CornerRadius="0">
                 <Label Text="TaxiSafeMobile" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
@@ -24,5 +25,6 @@
                 Text="Выйти из приложения" TextColor="White"
                 x:Name="Exit" Clicked="Exit_Clicked"/>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

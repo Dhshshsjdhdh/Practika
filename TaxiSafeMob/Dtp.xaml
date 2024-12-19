@@ -4,6 +4,7 @@
              x:Class="TaxiSafeMob.Dtp"
              Background="#f5c81b">
     <ContentPage.Content >
+        <ScrollView>
         <StackLayout>
             <Frame BackgroundColor="#222222" Padding="24" CornerRadius="0">
                 <Label Text="ДТП" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
@@ -22,5 +23,6 @@
                 Text="Вернуться назад" TextColor="White"
                 x:Name="Back" Clicked="Back_Clicked"/>
         </StackLayout>
+            </ScrollView>
     </ContentPage.Content>
 </ContentPage>
