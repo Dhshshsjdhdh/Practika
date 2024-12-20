@@ -8,8 +8,7 @@ namespace TaxiSafeMob
 {
     class DataBaseConfig
     {
-        //Работа с Nuget пакетами- Sql Client.
-        //Попытка решения проблемы совместимости Sql на платформе Xamarin
+        //тестирование приложения на разных устройствах, без изменения кода. 
       
         public static string Name;
 
